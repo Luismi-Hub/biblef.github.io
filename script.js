@@ -1,8 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
     let showAll = false;
+    const puzzleNumber = {{PUZZLE_NUMBER}}; // Este valor se reemplazará en el template HTML
+    const url = `https://raw.githubusercontent.com/Luismi-Hub/Luismi_Hub.github.io/main/puzzles/puzzle_${puzzleNumber}.json`;
 
-    fetch('p.json')
-        .then(response => response.json())
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
         .then(data => {
             const puzzle = data;
 
@@ -189,3 +196,4 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => console.error('Error al cargar el archivo JSON:', error));
 });
+
