@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     let showAll = false;
     const puzzleNumber = {{PUZZLE_NUMBER}}; // Este valor se reemplazará en el template HTML
-    const url = `https://raw.githubusercontent.com/Luismi-Hub/Luismi_Hub.github.io/main/puzzles/puzzle_${puzzleNumber}.json`;
+    const url = `https://raw.githubusercontent.com/Luismi-Hub/biblef.github.io/main/puzzles/puzzle_${puzzleNumber}.json`;
 
     fetch(url)
         .then(response => {
